@@ -36,7 +36,7 @@ class MyQueue:
     def print_queue(self) -> None:
         print(self.data)
         print("**************")
-        print(self.data[self.head : self.tail])
+        print(self.data[self.head: self.tail])
 
 
 class MyNode:
@@ -152,12 +152,12 @@ def insert_node(node: MyNode | None, data: Any) -> MyNode | None:
     if data < node.get_data():
         node.set_left(insert_node(node.get_left(), data))
         if (
-            get_height(node.get_left()) - get_height(node.get_right()) == 2
+                get_height(node.get_left()) - get_height(node.get_right()) == 2
         ):  # an unbalance detected
             left_child = node.get_left()
             assert left_child is not None
             if (
-                data < left_child.get_data()
+                    data < left_child.get_data()
             ):  # new node is the left child of the left child
                 node = right_rotation(node)
             else:
@@ -289,7 +289,7 @@ class AVLtree:
         self.root = del_node(self.root, data)
 
     def __str__(
-        self,
+            self,
     ) -> str:  # a level traversale, gives a more intuitive look on the tree
         output = ""
         q = MyQueue()

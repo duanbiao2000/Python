@@ -12,6 +12,12 @@ def test_fetch_github_info(monkeypatch):
             self.content = content
 
         def json(self):
+            """
+            将响应内容解析为JSON格式
+
+            Returns:
+                dict: 返回解析后的JSON数据
+            """
             return json.loads(self.content)
 
     def mock_response(*args, **kwargs):
